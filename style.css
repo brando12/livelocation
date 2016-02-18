@@ -1,0 +1,232 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+
+html,body{
+ 
+font-family: 'Montserrat', sans-serif;
+}
+
+/* VIDEO BACKGROUND */
+
+.fullscreen-bg {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -100;
+    height:500px;
+}
+
+.fullscreen-bg__video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+
+
+/*INSTAGRAM BUTTON*/
+
+/* Base styles */
+.btn-instagram {
+  font-size: 1.2em;
+  font-family: sans-serif;
+  color:#fff;
+	font-size:20px;
+	text-decoration: none;
+	display:inline-block; 
+	padding:0.5em 1.75em 0.5em 1em;
+	border-radius: 0.25em;
+	background: #663300;
+	
+	border-right:0.25em solid #00558D; /* blue stripe */
+	position: relative;
+	margin:0 0 1px; 
+	width: 100%;
+}
+
+.btn-instagram:before, .btn-instagram:after {
+	content:'';
+	display:block;
+	position: absolute;
+}
+
+/* Add Stripes */
+.btn-instagram:before {
+	width:0.25em;
+	height: 100%;
+	background:#FBB03B; /* yellow stripe */ 
+	border-left:0.25em solid #D4145A; /* red stripe */ 
+	border-right:0.25em solid #00A99D; /* green stripe */ 
+	top:0;
+	right:0;
+}
+
+/* Add Hightlights */
+.btn-instagram:after {
+	width:100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	border-radius: 0.25em;
+	padding-left: 0.25em;
+	box-shadow: inset 1px 1px 0px rgba(255,255,255,0.5), inset -1px -1px 0 rgba(0,0,0,0.1);
+
+background: -moz-linear-gradient(top,  rgba(255,255,255,0.25) 0%, rgba(255,255,255,0.1) 49%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.05) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.25)), color-stop(49%,rgba(255,255,255,0.1)), color-stop(50%,rgba(255,255,255,0)), color-stop(100%,rgba(0,0,0,0.05)));
+background: -webkit-linear-gradient(top,  rgba(255,255,255,0.25) 0%,rgba(255,255,255,0.1) 49%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.05) 100%);
+background: -o-linear-gradient(top,  rgba(255,255,255,0.25) 0%,rgba(255,255,255,0.1) 49%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.05) 100%);
+background: -ms-linear-gradient(top,  rgba(255,255,255,0.25) 0%,rgba(255,255,255,0.1) 49%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.05) 100%);
+background: linear-gradient(to bottom,  rgba(255,255,255,0.25) 0%,rgba(255,255,255,0.1) 49%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.05) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#40ffffff', endColorstr='#0d000000',GradientType=0 );
+}
+
+
+/* Animate - Fade */
+.btn-instagram, .btn-instagram:before {
+    -webkit-transition-property: background, border;
+    -webkit-transition: 0.1s ease-in;
+    -moz-transition-property: background, border;
+    -moz-transition: 0.1s ease-in;
+    -o-transition-property: background, border;
+    -o-transition: 0.1s ease-in;
+    transition-property: background, border;
+    transition: 0.1s ease-in;
+
+}
+
+/* Hover / Focus */
+.btn-instagram:hover, .btn-instagram:focus  {
+	text-decoration: none;
+	color: #fff;
+}
+
+.btn-instagram:hover {
+	border-right:0.25em solid #09c;
+}
+
+.btn-instagram:hover:before {
+	background:#fc6; /* yellow stripe */ 
+	border-left:0.25em solid #f06; /* red stripe */ 
+	border-right:0.25em solid #0cc; /* green stripe */ 
+}
+
+.btn-instagram:hover:after {
+
+background: -moz-linear-gr
+adient(top,  rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.2) 49%, rgba(255,255,255,0) 50%, rgba(0,0,0,0.1) 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0.35)), color-stop(49%,rgba(255,255,255,0.2)), color-stop(50%,rgba(255,255,255,0)), color-stop(100%,rgba(0,0,0,0.1)));
+background: -webkit-linear-gradient(top,  rgba(255,255,255,0.35) 0%,rgba(255,255,255,0.2) 49%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.1) 100%);
+background: -o-linear-gradient(top,  rgba(255,255,255,0.35) 0%,rgba(255,255,255,0.2) 49%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.1) 100%);
+background: -ms-linear-gradient(top,  rgba(255,255,255,0.35) 0%,rgba(255,255,255,0.2) 49%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.1) 100%);
+background: linear-gradient(to bottom,  rgba(255,255,255,0.35) 0%,rgba(255,255,255,0.2) 49%,rgba(255,255,255,0) 50%,rgba(0,0,0,0.1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#59ffffff', endColorstr='#1a000000',GradientType=0 );
+
+}
+
+/* Active */
+.btn-instagram:active {
+	margin:1px 0 0; 
+}
+
+<!-- SIGN UP BOX -->
+.progress-bar {
+    color: #333;
+} 
+
+/*
+Reference:
+http://www.bootstrapzen.com/item/135/simple-login-form-logo/
+*/
+
+* {
+    -webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+	outline: none;
+}
+
+    .form-control {
+	  position: relative;
+	  font-size: 16px;
+	  height: auto;
+	  padding: 10px;
+		@include box-sizing(border-box);
+
+		&:focus {
+		  z-index: 20;
+		}
+	}
+
+.login-form {
+	margin-top: 50px;
+	z-index: 20;
+	
+}
+
+form[role=login] {
+	color: #5d5d5d;
+	background:rgba(0,0,0,0.4);
+	padding: 35px;
+	border-radius: 1px;
+	-moz-border-radius: 1px;
+	-webkit-border-radius: 1px;
+}
+	form[role=login] img {
+		display: block;
+		margin: 0 auto;
+		margin-bottom: 35px;
+	}
+	form[role=login] input,
+	form[role=login] button {
+		font-size: 18px;
+		margin: 16px 0;
+	}
+	form[role=login] > div {
+		text-align: center;
+	}
+	
+.form-links {
+	text-align: center;
+	margin-top: 1em;
+	margin-bottom: 50px;
+}
+	.form-links a {
+		color: #fff;
+	}
+
+.heading{
+color: white;
+font-family: inherit;
+font-weight:700;
+font-size: 50px !important;
+text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+
+
+}
+
+.sub-heading{
+color: white;
+font-weight: 700;
+text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
+.tip{
+font-size: 30px;
+color: white;
+font-weight: 500;
+text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+}
+
+.quote{
+color:white;
+font-size:23px;
+text-shadow: 2px 4px 3px rgba(0,0,0,0.3);
+font-weight: 200;
+
+}
+
+

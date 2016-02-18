@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.2.2/isotope.pkgd.min.js"></script>
+
+	<!-- Google Maps -->
+	<script src="https://maps.googleapis.com/maps/api/js"></script>
+
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+	<!-- Bootstrap Slider -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/5.1.0/css/bootstrap-slider.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/5.1.0/bootstrap-slider.min.js"></script>
+
+	<!--Bootstrap Token Field -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/bootstrap-tokenfield.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/css/tokenfield-typeahead.min.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-tokenfield/0.12.0/bootstrap-tokenfield.min.js"></script>
+
+	<script src="functions.js"></script>
+
+	<!-- Mobile Settings-->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+	<!-- Custom CSS -->
+	<link rel="stylesheet" href="style2.css">
+
+</head>
+
+<body>
+<!-- begin template -->
+
+<div id="settings-section">
+	<a class="navbar-brand" href="#">livloo</a><br>
+	<br><br>
+
+	<!-- start of LOCATION -->
+	<h4>LOCATION</h4>
+	<input id="location" type="text" class="form-control" value="Reisterstown, MD" placeholder="Location">
+	<br><br>
+	<!-- end of LOCATION -->
+
+	<!-- start of TAGS -->
+	<h4>TAGS</h4>
+	<input type="text" class="" id="tokenfield" value="Restaraunt,goodview,crabs" />
+	<script>
+		$('#tokenfield').tokenfield({
+		autocomplete: {
+			source: ['red','blue','green','yellow','violet','brown','purple','black','white'],
+			delay: 100
+		},
+		showAutocompleteOnFocus: true
+	})
+	</script>
+	<br><br>
+	<!-- end of TAGS -->
+
+	<!-- start of CROWDED SEARCH -->
+	<h4>POPULARITY</h4>
+	<input id="crowd" data-slider-id='crowd' type="text" data-slider-min="1" data-slider-max="100" data-slider-step="1" data-slider-value="10" data-slider-handle="custom"/>
+	<script>
+	// With JQuery
+	$('#crowd').slider({
+
+	});
+	</script><br><br>
+	<!-- end of CROWDED SEARCH -->
+
+	<!-- start of SEARCH RADIUS SLIDER -->
+	<h4>DISTANCE</h4>
+	<div class="radius">
+	<input id="radius" data-slider-id='radius' type="text" data-slider-min="1" data-slider-max="50" data-slider-step="1" data-slider-value="25" data-slider-handle="custom"/>
+  </div>
+	<script>
+	// With JQuery
+	$('#radius').slider({
+
+	});
+	</script>
+	<!-- end of SEARCH RADIUS SLIDER -->
+
+	<!-- start of SEARCH RADIUS SLIDER -->
+	<h4>PRICE</h4>
+	<div class="cost">
+	<input id="cost" data-slider-id='cost' type="text" data-slider-min="0" data-slider-max="1000" data-slider-step="1" data-slider-value="10" data-slider-handle="custom"/>
+	</div>
+	<script>
+	// With JQuery
+	$('#cost').slider({
+
+	});
+	</script>
+	<!-- end of SEARCH RADIUS SLIDER -->
+
+	<div class="menu">
+		<a class="item" href=""> Upgrade </a>
+		<a class="item" href=""> About </a>
+		<a class="item" href=""> Contact </a>
+		<a class="item" href=""> Help </a>
+	</div>
+	<span class="copyright"> &#169; Livloo Inc. 2016 </span>
+</div>
+<div id="map-canvas"></div>
+
+<div id="favorites">
+	<div style="height:100%;" class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">My Favorite Places</h3>
+  </div>
+  <div class="panel-body">
+    Panel content
+  </div>
+</div>
+</div>
+
+<div class="container-fluid" id="main">
+  <div class="row">
+		 <div class="col-xs-3"><!--settings-section will be positioned here--></div>
+  	 <div class="col-xs-5" id="left">
+
+			 <div class="row">
+				 <div class="col-lg-12">
+					 <div class="card">
+						 <div class="info">
+							 	 <h2>Mike's Crab House</h2>
+								 <a href="#" class="tag">Restaruant</a>
+								 <a href="#" class="tag">Goodview</a>
+								 <a href="#" class="tag">Crabs</a>
+								 <a href="#" class="tag">Music</a>
+						 </div>
+						 <a href="#" class="popularity"> <i class="fa fa-users"></i> Very Crowded</a>
+						 <div class="distance"> <i class="fa fa-flag"></i> 2.3 mi</div>
+						 <img height="100%" src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s320x320/e35/11809834_916678641741058_2029508725_n.jpg" />
+					 </div>
+				 </div>
+			 </div>
+
+			 <div class="row">
+				<div class="col-lg-12">
+					<div class="card">
+						<div class="info">
+								<h2>Mike's Crab House</h2>
+								<a href="#" class="tag">Restaruant</a>
+								<a href="#" class="tag">Goodview</a>
+								<a href="#" class="tag">Crabs</a>
+								<a href="#" class="tag">Music</a>
+						</div>
+						<a href="#" class="popularity"> <i class="fa fa-users"></i> Very Crowded</a>
+						<div class="distance"> <i class="fa fa-flag"></i> 2.3 mi</div>
+						<img height="100%" src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s320x320/e35/11809834_916678641741058_2029508725_n.jpg" />
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+			 <div class="col-lg-12">
+				 <div class="card">
+					 <div class="info">
+							 <h2>Mike's Crab House</h2>
+							 <a href="#" class="tag">Restaruant</a>
+							 <a href="#" class="tag">Goodview</a>
+							 <a href="#" class="tag">Crabs</a>
+							 <a href="#" class="tag">Music</a>
+					 </div>
+					 <a href="#" class="popularity"> <i class="fa fa-users"></i> Very Crowded</a>
+					 <div class="distance"> <i class="fa fa-flag"></i> 2.3 mi</div>
+					 <img height="100%" src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s320x320/e35/11809834_916678641741058_2029508725_n.jpg" />
+				 </div>
+			 </div>
+		 </div>
+
+		 <div class="row">
+			<div class="col-lg-12">
+				<div class="card">
+					<div class="info">
+							<h2>Mike's Crab House</h2>
+							<a href="#" class="tag">Restaruant</a>
+							<a href="#" class="tag">Goodview</a>
+							<a href="#" class="tag">Crabs</a>
+							<a href="#" class="tag">Music</a>
+					</div>
+					<a href="#" class="popularity"> <i class="fa fa-users"></i> Very Crowded</a>
+					<div class="distance"> <i class="fa fa-flag"></i> 2.3 mi</div>
+					<img height="100%" src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s320x320/e35/11809834_916678641741058_2029508725_n.jpg" />
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+		 <div class="col-lg-12">
+			 <div class="card">
+				 <div class="info">
+						 <h2>Mike's Crab House</h2>
+						 <a href="#" class="tag">Restaruant</a>
+						 <a href="#" class="tag">Goodview</a>
+						 <a href="#" class="tag">Crabs</a>
+						 <a href="#" class="tag">Music</a>
+				 </div>
+				 <a href="#" class="popularity"> <i class="fa fa-users"></i> Very Crowded</a>
+				 <div class="distance"> <i class="fa fa-flag"></i> 2.3 mi</div>
+				 <img height="100%" src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s320x320/e35/11809834_916678641741058_2029508725_n.jpg" />
+			 </div>
+		 </div>
+	 </div>
+
+	 <div class="row">
+		<div class="col-lg-12">
+			<div class="card">
+				<div class="info">
+						<h2>Mike's Crab House</h2>
+						<a href="#" class="tag">Restaruant</a>
+						<a href="#" class="tag">Goodview</a>
+						<a href="#" class="tag">Crabs</a>
+						<a href="#" class="tag">Music</a>
+				</div>
+				<a href="#" class="popularity"> <i class="fa fa-users"></i> Very Crowded</a>
+				<div class="distance"> <i class="fa fa-flag"></i> 2.3 mi</div>
+				<img height="100%" src="https://scontent.cdninstagram.com/hphotos-xaf1/t51.2885-15/s320x320/e35/11809834_916678641741058_2029508725_n.jpg" />
+			</div>
+		</div>
+	</div>
+
+    </div>
+    <div class="col-xs-4"><!--map-canvas will be postioned here--></div>
+  </div>
+</div>
+<!-- end template -->
+</body>
